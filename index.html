@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Farm Houses - Book Your Perfect Getaway</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Farm Houses by_V1h</span>
+            </div>
+
+            <button class="nav-toggle" id="navToggle">
+                <span class="hamburger"></span>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#farms" class="nav-link">Our Farms</a>
+                <a href="#contact" class="nav-link">Contact Us</a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Luxury Farm Houses</h1>
+            <p class="hero-subtitle">Premium Luxury Farm Stays & Event Villas in Hyderabad</p>
+            <a href="#farms" class="btn-primary">Explore Our Properties</a>
+        </div>
+    </section>
+
+    <!-- FARMS GRID -->
+    <section id="farms" class="farms-section">
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title">Our Premium Farm Houses</h2>
+                <p class="section-subtitle">
+                    Discover our exclusive collection of luxury farm houses, each offering unique experiences.
+                </p>
+
+                <p class="farm-info-box">
+                    You can book any of these farm houses by viewing it. Each card has a booking button for your convenience.
+                </p>
+            </div>
+
+            <div class="farms-grid" id="farmsGrid"></div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+
+        <div class="contact-header">
+            <h2 class="contact-title">Get In Touch</h2>
+            <p class="contact-subtitle">Ready to book your dream farm stay? Contact us today!</p>
+        </div>
+
+        <div class="contact-wrapper">
+
+            <!-- LEFT -->
+            <div class="contact-card-left">
+                <h3 class="contact-card-title">Contact Information</h3>
+
+                <p class="contact-label">Phone (Booking)</p>
+                <a href="tel:+918019609632" class="contact-phone">80196 09632</a>
+
+                <p class="contact-label">WhatsApp </p>
+                <a href="https://wa.me/917981634286" class="contact-phone">80196 09632</a>
+
+                <p class="contact-label">Location</p>
+                <p class="contact-location">Hyderabad, Telangana</p>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="contact-card-right">
+                <h3 class="contact-card-title">Quick Booking</h3>
+                <p class="contact-text">
+                    Click below to book instantly via WhatsApp or explore our farm houses above.
+                </p>
+
+                <a href="https://wa.me/917981634286" class="contact-book-btn">WhatsApp Booking</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-left">
+                <h2 class="footer-logo">farm houses by_v1h</h2>
+                <p class="footer-desc">Premium Luxury Farm Stays & Event Villas in Hyderabad</p>
+                <p class="footer-license">✔ License Approved</p>
+                <div class="footer-stars">⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#farms">Our Farms</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-social">
+                <h3>Connect With Us</h3>
+                <p>Follow us on Instagram for updates & offers</p>
+
+                <a href="https://instagram.com/farm_houses_by_v1h"
+                   target="_blank"
+                   class="insta-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" class="insta-icon">
+                    @farm_houses_by_v1h
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            Copyright © 2025 farm houses by_v1h. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- HIDDEN DETAIL PAGE (Dynamic) -->
+    <div id="detailPage" class="detail-page hidden"></div>
+
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal" class="modal hidden">
+        <div class="modal-overlay" onclick="closeBookingModal()"></div>
+
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+
+            <div class="modal-header">
+                <div class="modal-icon"></div>
+                <h2 class="modal-title">Reserve Your Stay</h2>
+                <p class="modal-subtitle" id="modalFarmName"></p>
+            </div>
+
+            <form id="bookingForm" class="booking-form">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" id="customerName" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" id="customerEmail" class="form-input" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" id="customerPhone" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Duration</label>
+                        <div class="form-display" id="durationDisplay">Select dates</div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Check-in Date</label>
+                        <input type="date" id="checkInDate" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Check-out Date</label>
+                        <input type="date" id="checkOutDate" class="form-input" required>
+                    </div>
+                </div>
+
+                <div id="pricingSummary" class="pricing-summary hidden">
+                    <h3 class="pricing-title">Pricing Summary</h3>
+
+                    <div class="pricing-row">
+                        <span>Weekday Price</span>
+                        <span id="weekdayPrice">₹0</span>
+                    </div>
+
+                    <div class="pricing-row">
+                        <span>Weekend Price</span>
+                        <span id="weekendPrice">₹0</span>
+                    </div>
+
+                    <div class="pricing-row pricing-total">
+                        <span>Total Days</span>
+                        <span id="totalDays">0 days</span>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn-submit" disabled>
+                    Send Booking Request
+                </button>
+
+            </form>
+
+            <p class="modal-footer-text">You'll be redirected to WhatsApp</p>
+            <p class="modal-footer-text">
+    When you tap <strong>Send Booking Request</strong>, your selected dates will be sent to us on WhatsApp for an availability check. 
+    Our team will contact you to confirm your booking. You can also call us directly anytime.
+</p>
+
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
