@@ -599,8 +599,11 @@ html {
     height: 70vh;
     max-height: 800px;
     background: var(--black);
-    overflow: hidden;
+
+    /* FIX mobile fullscreen + volume */
+    overflow: visible !important;
 }
+
 
 .slider-container {
     position: absolute;
@@ -712,6 +715,12 @@ html {
     font-size: 1.125rem;
 }
 
+
+
+
+
+
+
 .slider-stars {
     color: var(--yellow-400);
 }
@@ -725,6 +734,7 @@ html {
         left: 1rem;
         bottom: 1rem;
     }
+
 }
 
 /* ============================================
@@ -1759,4 +1769,22 @@ html {
 .whatsapp-text {
     font-size: 14px;
     font-weight: 600;
+}
+
+/* Enable mobile video controls */
+.slider-container,
+.slider-media {
+    pointer-events: auto !important;
+}
+
+.slider-info,
+.slider-dots,
+.slider-title,
+.slider-subtitle,
+.slider-stars {
+    pointer-events: none !important;
+}
+
+.slider-btn {
+    pointer-events: auto !important;
 }

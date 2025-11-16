@@ -192,15 +192,16 @@ function renderDetailPage(farm) {
                     </section>
 
                     <section class="detail-section">
-                        <h2 class="detail-title">Location</h2>
-                        <div class="map-container">
-                            <iframe src="${farm.mapUrl}" width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
-                        </div>
-                        <a href="${farm.mapUrl}" target="_blank" class="map-link">
-                            <svg width="20" height="20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            Open in Google Maps
-                        </a>
-                    </section>
+    <h2 class="detail-title">Location</h2>
+    <div class="map-container">
+        <iframe src="${farm.mapUrl}" width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <a href="${farm.openMapUrl}" target="_blank" class="map-link">
+        <svg width="20" height="20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Open in Google Maps
+    </a>
+</section>
+
 
                 </div>
 
@@ -289,13 +290,14 @@ function renderSlide() {
     const container = document.getElementById("sliderContainer");
     const media = allMedia[currentSlide];
 
-    // Correct video detection
+    // Detect video correctly
     const isVideo =
         media.endsWith(".mp4") ||
         media.includes(".mp4") ||
-        media.includes("video/upload") ||     // Cloudinary actual video pattern
-        media.includes("/video/");            // Another Cloudinary video pattern
+        media.includes("video/upload") ||
+        media.includes("/video/");
 
+    // Insert video or image
     container.innerHTML = isVideo
         ? `
             <video class="slider-media" controls autoplay muted playsinline>
@@ -303,7 +305,17 @@ function renderSlide() {
             </video>
         `
         : `<img src="${media}" class="slider-media">`;
+
+    // ⭐ FIX: Enable volume button (tap to unmute)
+    const video = container.querySelector("video");
+
+    if (video) {
+        video.addEventListener("click", () => {
+            if (video.muted) video.muted = false; // unmute on first tap
+        }, { once: true });
+    }
 }
+
 
 
 

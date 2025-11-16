@@ -15,6 +15,7 @@ const farmHousesData = {
     name: 'Nature Retreat',
     instagram: 'https://www.instagram.com/natureretreatbyv1?igsh=MWU5NmV2aDVmODcwZQ==',
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.496308188629!2d78.7286313!3d17.569453499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb79548de7d271%3A0x1e6304f79ab99fb6!2sNaturaleza%20Staycation!5e1!3m2!1sen!2sin!4v1763184189347!5m2!1sen!2sin',
+    openMapUrl: 'https://maps.app.goo.gl/th12FZJ5qw3xpapT9',
     images: [
         'https://res.cloudinary.com/dvxjlj88o/image/upload/v1763010743/nature_image_1_v1qfuh.jpg',
         'https://res.cloudinary.com/dvxjlj88o/image/upload/v1763010954/nature_image_2_zmvbrx.jpg',
@@ -49,6 +50,8 @@ const farmHousesData = {
         name: 'Creekvalley',
         instagram: 'https://www.instagram.com/creekvalleybyv1?igsh=c3c0aXAyeTh1Y3Np',
         mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.1682984609124!2d78.8938026!3d18.2729416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bccef890b7e72c1%3A0x21d9179c224f9f53!2sCreekValley!5e1!3m2!1sen!2sin!4v1763184296293!5m2!1sen!2sin',
+        openMapUrl: 'https://maps.app.goo.gl/n53KQhU6rvgAQ8MS9',
+        
         images: [
             'https://res.cloudinary.com/dvxjlj88o/image/upload/v1763131544/creek_valley_1_bt90jz.jpg',
             'https://res.cloudinary.com/dvxjlj88o/image/upload/v1763131692/creekvalley2_haltki.jpg',
@@ -82,6 +85,7 @@ const farmHousesData = {
         name: 'Casablanca',
         instagram: 'https://www.instagram.com/casablancabyv1?igsh=eXh2MGx1eWg5Mnd2',
         mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.6045493692072!2d77.8771837!3d17.513901500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc9573cd9d58839%3A0x7e67141972b8881f!2sForest%20Park%20Retreat!5e1!3m2!1sen!2sin!4v1763184426397!5m2!1sen!2sin',
+        openMapUrl: 'https://maps.app.goo.gl/qysGUVBUWWGxQo368',
         images: [
             'https://res.cloudinary.com/dvxjlj88o/image/upload/v1763139212/casablanca_image_3_mfurhg.jpg',
             'https://res.cloudinary.com/dvxjlj88o/image/upload/v1763139082/casablanca_image_2_vbhj63.jpg',
@@ -112,6 +116,7 @@ const farmHousesData = {
         name: 'Santorini',
         instagram: 'https://www.instagram.com/santorini_farmhousebyv1?igsh=aHpyNXM2bzBpZWxv',
         mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.4984680431176!2d78.43150159999999!3d17.569345400000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8f007feb5681%3A0x1ea54acfb70d1590!2sSantorini!5e1!3m2!1sen!2sin!4v1763184502098!5m2!1sen!2sin',
+        openMapUrl: 'https://maps.app.goo.gl/GCU4xVg6qWkdZzxRA',
         images: [
             'https://res.cloudinary.com/dvxjlj88o/image/upload/v1763140445/santorini_image_1_ayrvgo.jpg',
             'https://res.cloudinary.com/dvxjlj88o/image/upload/v1763140537/santorini_image_2_dhozm4.jpg',
@@ -145,6 +150,7 @@ const farmHousesData = {
         name: 'Le ceilo',
         instagram: 'https://www.instagram.com/leceilobyv1?igsh=bmwxZDloNHdienV5',
         mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.1682984609124!2d78.8938026!3d18.2729416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bccef890b7e72c1%3A0x21d9179c224f9f53!2sCreekValley!5e1!3m2!1sen!2sin!4v1763184575234!5m2!1sen!2sin',
+        openMapUrl: 'https://maps.app.goo.gl/n53KQhU6rvgAQ8MS9', 
         images: [
             'https://res.cloudinary.com/dvxjlj88o/image/upload/v1763142096/le_ceilo_image_2_qtkqdq.jpg',
             'https://res.cloudinary.com/dvxjlj88o/image/upload/v1763142051/le_ceilo_image_1_vxvnn4.jpg',
@@ -178,6 +184,7 @@ const farmHousesData = {
         name: 'Dreamland farmstay',
         instagram: 'https://www.instagram.com/dreamlandfarmstaybyv1?igsh=NDd4cWc4dDRoOGZz',
         mapUrl: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3626.1915496553634!2d78.4561042751567!3d17.026014283800887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDAxJzMzLjciTiA3OMKwMjcnMzEuMyJF!5e1!3m2!1sen!2sin!4v1763184675248!5m2!1sen!2sin',
+        openMapUrl: 'https://maps.app.goo.gl/AtbBBkD8UbQGFVLKA',
         images: [
             'https://res.cloudinary.com/dvxjlj88o/image/upload/v1763144510/dream_land_image_1_olgwpl.jpg',
             'https://res.cloudinary.com/dvxjlj88o/image/upload/v1763144509/dream_land_image_2_xvjesb.jpg',
