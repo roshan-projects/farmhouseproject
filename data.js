@@ -41,8 +41,9 @@ const farmHousesData = {
         'Indoor Games',
         'BBQ Area'
     ],
-    price: 5000,
-    phone: '8019609632'
+    priceWeekday: 15000,
+priceWeekend: 18000,
+phone: '8019609632'
 },
 
     'Creekvalley': {
@@ -77,8 +78,9 @@ const farmHousesData = {
     'Indoor Games',
     'BBQ Area'
         ],
-        price: 6000,
-        phone: '8019609632'
+        priceWeekday: 12000,
+priceWeekend: 15000,
+phone: '8019609632'
     },
     'Casablanca': {
         id: 'casablanca',
@@ -108,8 +110,9 @@ const farmHousesData = {
             'Projector & Outdoor Screening',
             'Fully Air-Conditioned Bedrooms'
         ],
-        price: 7000,
-        phone: '8019609632'
+        priceWeekday: 20000,
+priceWeekend: 25000,
+phone: '8019609632'
     },
     'Santorini': {
         id: 'santorini',
@@ -142,8 +145,9 @@ const farmHousesData = {
     'Indoor Games',
     'BBQ Area'
         ],
-        price: 5500,
-        phone: '8019609632'
+        priceWeekday: 12000,
+priceWeekend: 15000,
+phone: '8019609632'
     },
     'Le ceilo': {
         id: 'le ceilo',
@@ -176,8 +180,9 @@ const farmHousesData = {
     'Indoor Games',
     'BBQ Area'
         ],
-        price: 6500,
-        phone: '8019609632'
+        priceWeekday: 8000,
+priceWeekend: 10000,
+phone: '8019609632'
     },
     'Dreamland farmstay': {
         id: 'dreamland farmstay',
@@ -210,7 +215,8 @@ const farmHousesData = {
     'Indoor Games',
     'BBQ Area'
         ],
-        price: 7500,
-        phone: '8019609632'
+        priceWeekday: 15000,
+priceWeekend: 18000,
+phone: '8019609632'
     }
 };

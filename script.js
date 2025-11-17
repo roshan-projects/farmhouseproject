@@ -88,9 +88,8 @@ function createFarmCard(farm) {
             <div class="farm-card-overlay"></div>
         </div>
         <div class="farm-card-content">
-            <div class="farm-card-price">₹${farm.price}/night</div>
+            <div class="farm-card-price">₹${farm.priceWeekday}/night</div>
             <h3 class="farm-card-title">${farm.name}</h3>
-            
         </div>
         <button class="farm-card-btn">View Details</button>
     `;
@@ -134,9 +133,6 @@ function showFarmDetail(farmName) {
     document.querySelector(".farms-section").style.display = "none";
     document.querySelector(".hero-section").style.display = "none";
 
-    // ❌ Removed footer hide line
-    // document.querySelector(".footer").style.display = "none";
-
     setupSlider();
 }
 
@@ -144,7 +140,9 @@ function showFarmDetail(farmName) {
 // DETAIL PAGE COMPONENT
 // ===============================
 function renderDetailPage(farm) {
-    const weekendPrice = farm.price * 2;
+
+    const weekdayPrice = farm.priceWeekday;
+    const weekendPrice = farm.priceWeekend;
 
     return `
         <div class="detail-container">
@@ -192,16 +190,15 @@ function renderDetailPage(farm) {
                     </section>
 
                     <section class="detail-section">
-    <h2 class="detail-title">Location</h2>
-    <div class="map-container">
-        <iframe src="${farm.mapUrl}" width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <a href="${farm.openMapUrl}" target="_blank" class="map-link">
-        <svg width="20" height="20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Open in Google Maps
-    </a>
-</section>
-
+                        <h2 class="detail-title">Location</h2>
+                        <div class="map-container">
+                            <iframe src="${farm.mapUrl}" width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                        <a href="${farm.openMapUrl}" target="_blank" class="map-link">
+                            <svg width="20" height="20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Open in Google Maps
+                        </a>
+                    </section>
 
                 </div>
 
@@ -216,7 +213,7 @@ function renderDetailPage(farm) {
                                 <p class="pricing-days">(Mon-Thu)</p>
                             </div>
                             <div class="pricing-amount-container">
-                                <p class="pricing-amount weekday">₹${farm.price}</p>
+                                <p class="pricing-amount weekday">₹${weekdayPrice}</p>
                                 <p class="pricing-per">per night / 24hrs</p>
                             </div>
                         </div>
@@ -237,11 +234,6 @@ function renderDetailPage(farm) {
                         <h3 class="booking-card-title">Reserve Your Stay</h3>
                         <button onclick="openBookingModal('${farm.name}')" class="btn-reserve">Reserve Now</button>
                         <p class="booking-card-text">Send booking request via WhatsApp</p>
-                            <p class="booking-info-note">
-        When you tap Reserve, your selected dates will be sent to us on WhatsApp for availability check. 
-        Our team will contact you to confirm your booking. You can also call us directly anytime.
-    </p>
-
                     </div>
 
                     <div class="contact-card">
@@ -252,34 +244,16 @@ function renderDetailPage(farm) {
 
                     <div class="social-card">
                         <h3 class="social-card-title">Follow Us</h3>
-
-                        <a href="${farm.instagram}" target="_blank" class="instagram-link">
-                            <div class="instagram-icon">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
-                                    <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A5.5 5.5 0 1017.5 13 5.5 5.5 0 0012 7.5zm0 9A3.5 3.5 0 1115.5 13 3.5 3.5 0 0112 16.5zm4.8-10.9a1.3 1.3 0 11-1.3 1.3 1.3 1.3 0 011.3-1.3z"/>
-                                </svg>
-                            </div>
-
-                            <span class="instagram-text">Instagram</span>
-                        </a>
+                        <a href="${farm.instagram}" target="_blank" class="instagram-link">Instagram</a>
                     </div>
-
-                    <div class="badge-card">
-                        <span class="badge-check">✓ License Approved</span>
-                        <div class="badge-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="badge-text">Certified & Verified Property</p>
-                    </div>
-
                 </div>
-
             </div>
-
         </div>
     `;
 }
 
 // ===============================
-// SLIDER CONTROLS
+// SLIDER FUNCTIONS
 // ===============================
 function setupSlider() {
     renderSlide();
@@ -290,34 +264,14 @@ function renderSlide() {
     const container = document.getElementById("sliderContainer");
     const media = allMedia[currentSlide];
 
-    // Detect video correctly
-    const isVideo =
-        media.endsWith(".mp4") ||
-        media.includes(".mp4") ||
-        media.includes("video/upload") ||
-        media.includes("/video/");
+    const isVideo = media.endsWith(".mp4") || media.includes("video");
 
-    // Insert video or image
     container.innerHTML = isVideo
-        ? `
-            <video class="slider-media" controls autoplay muted playsinline>
+        ? `<video class="slider-media" controls autoplay muted playsinline>
                 <source src="${media}" type="video/mp4">
-            </video>
-        `
+           </video>`
         : `<img src="${media}" class="slider-media">`;
-
-    // ⭐ FIX: Enable volume button (tap to unmute)
-    const video = container.querySelector("video");
-
-    if (video) {
-        video.addEventListener("click", () => {
-            if (video.muted) video.muted = false; // unmute on first tap
-        }, { once: true });
-    }
 }
-
-
-
 
 function renderDots() {
     const dots = document.getElementById("sliderDots");
@@ -353,13 +307,7 @@ function closeDetailPage() {
 
     document.querySelector(".farms-section").style.display = "block";
     document.querySelector(".hero-section").style.display = "flex";
-
-    // ✅ Show footer again
-    document.querySelector(".footer").style.display = "block";
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
 }
-
 
 // ===============================
 // BOOKING MODAL
@@ -390,10 +338,10 @@ function updateBookingDetails() {
         const days = calculateDays(checkIn, checkOut);
 
         if (days > 0) {
-            document.getElementById("durationDisplay").innerHTML = `<strong>${days} ${days === 1 ? "Day" : "Days"}</strong>`;
+            document.getElementById("durationDisplay").innerHTML = `<strong>${days} Days</strong>`;
 
-            const weekdayPrice = currentFarm.price;
-            const weekendPrice = weekdayPrice * 2;
+            const weekdayPrice = currentFarm.priceWeekday;
+            const weekendPrice = currentFarm.priceWeekend;
 
             document.getElementById("weekdayPrice").textContent = `₹${weekdayPrice}/night`;
             document.getElementById("weekendPrice").textContent = `₹${weekendPrice}/night`;
@@ -436,10 +384,11 @@ function handleBookingSubmit(e) {
     const checkOut = document.getElementById("checkOutDate").value;
     const days = calculateDays(checkIn, checkOut);
 
-    const weekdayPrice = currentFarm.price;
-    const weekendPrice = weekdayPrice * 2;
+    const weekdayPrice = currentFarm.priceWeekday;
+    const weekendPrice = currentFarm.priceWeekend;
 
-    const message = `-----------------------------------------
+    const message = `
+-----------------------------------------
 📌 Farm House Booking Request
 
 Farm House Name : ${currentFarm.name}
@@ -472,4 +421,31 @@ Kindly confirm the availability.
 function openWhatsApp() {
     const message = encodeURIComponent("Hi, I would like to inquire about booking a farm house.");
     window.open(`https://wa.me/91${WHATSAPP_PHONE}?text=${message}`, "_blank");
+}
+
+
+// ====== TOUCH SWIPE SUPPORT FOR IMAGE & VIDEO SLIDER ======
+let touchStartX = 0;
+let touchEndX = 0;
+
+function handleGesture() {
+    if (touchEndX < touchStartX - 50) {
+        document.querySelector('.slider-next').click();   // Swipe left → Next slide
+    }
+    if (touchEndX > touchStartX + 50) {
+        document.querySelector('.slider-prev').click();   // Swipe right → Previous slide
+    }
+}
+
+const sliderContainer = document.querySelector('.farm-slider');  // Full slider area
+
+if (sliderContainer) {
+    sliderContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    sliderContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleGesture();
+    });
 }
