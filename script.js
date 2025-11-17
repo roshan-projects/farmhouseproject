@@ -258,7 +258,32 @@ function renderDetailPage(farm) {
 function setupSlider() {
     renderSlide();
     renderDots();
+
+    // ===== SWIPE SUPPORT =====
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const slider = document.querySelector('.farm-slider');
+
+    slider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+
+        // Swipe left → next slide
+        if (touchEndX < touchStartX - 50) {
+            nextSlide();
+        }
+
+        // Swipe right → previous slide
+        if (touchEndX > touchStartX + 50) {
+            previousSlide();
+        }
+    });
 }
+
 
 function renderSlide() {
     const container = document.getElementById("sliderContainer");
@@ -424,28 +449,4 @@ function openWhatsApp() {
 }
 
 
-// ====== TOUCH SWIPE SUPPORT FOR IMAGE & VIDEO SLIDER ======
-let touchStartX = 0;
-let touchEndX = 0;
 
-function handleGesture() {
-    if (touchEndX < touchStartX - 50) {
-        document.querySelector('.slider-next').click();   // Swipe left → Next slide
-    }
-    if (touchEndX > touchStartX + 50) {
-        document.querySelector('.slider-prev').click();   // Swipe right → Previous slide
-    }
-}
-
-const sliderContainer = document.querySelector('.farm-slider');  // Full slider area
-
-if (sliderContainer) {
-    sliderContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-
-    sliderContainer.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleGesture();
-    });
-}
