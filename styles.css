@@ -1790,3 +1790,13 @@ html {
 .slider-btn {
     pointer-events: auto !important;
 }
+.hero-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--blue-200);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
