@@ -1805,23 +1805,24 @@ html {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(45deg, #ff512f, #dd2476); /* SAME AS FIRST IMAGE */
+    background: linear-gradient(45deg, #ff5f6d, #ff3d8e, #d633ff);
     padding: 12px 22px;
     border-radius: 40px;
-    text-decoration: none;
-    color: white;
+    color: #fff;
+    font-size: 16px;
     font-weight: 600;
-    font-size: 15px;
-    transition: 0.3s ease;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .farm-insta-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0px 8px 20px rgba(255, 0, 100, 0.3);
+    box-shadow: 0 8px 20px rgba(255, 0, 120, 0.3);
 }
 
 .farm-insta-icon {
-    height: 25px;
-    width: 25px;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
 }
 

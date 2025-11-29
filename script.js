@@ -221,6 +221,18 @@ function renderDetailPage(farm) {
                 </div>
 
                 <div class="detail-sidebar">
+                          
+                <div class="social-card">
+    <h3 class="social-card-title">Follow Us</h3>
+    <a href="${farm.instagram}" target="_blank" class="farm-insta-btn">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" class="farm-insta-icon">
+        @${farm.name.replace(/\s+/g, '_').toLowerCase()}
+    </a>
+</div>
+
+
+
+
 
                     <div class="pricing-card">
                         <h3 class="pricing-card-title">Pricing</h3>
@@ -260,14 +272,7 @@ function renderDetailPage(farm) {
                         <a href="tel:+91${farm.phone}" class="contact-phone">+91 ${farm.phone}</a>
                     </div>
 
-                    <div class="social-card">
-    <h3 class="social-card-title">Follow Us</h3>
-
-    <a href="${farm.instagram}" target="_blank" class="farm-insta-btn">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" class="farm-insta-icon">
-        @${farm.name.replace(/\s+/g, '_').toLowerCase()}
-    </a>
-</div>
+                    
 
                 </div>
             </div>
