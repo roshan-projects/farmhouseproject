@@ -4,6 +4,8 @@
 let currentFarm = null;
 let currentSlide = 0;
 let allMedia = [];
+let lastScrollPosition = 0;
+
 
 // ===============================
 // INITIALIZE APP ON LOAD
@@ -119,6 +121,10 @@ function getAmenityIcon(name) {
 // SHOW FARM DETAIL PAGE
 // ===============================
 function showFarmDetail(farmName) {
+
+    // Save scroll position BEFORE opening detail page
+    lastScrollPosition = window.scrollY;
+
     currentFarm = farmHousesData[farmName];
     if (!currentFarm) return;
 
@@ -129,12 +135,24 @@ function showFarmDetail(farmName) {
     detailPage.innerHTML = renderDetailPage(currentFarm);
     detailPage.classList.remove("hidden");
 
+    // Hide home layout
     document.body.style.overflow = "hidden";
     document.querySelector(".farms-section").style.display = "none";
     document.querySelector(".hero-section").style.display = "none";
 
     setupSlider();
+
+    // ⭐ FIX: force scroll to top properly
+    setTimeout(() => {
+        // Scroll window to top
+        window.scrollTo(0, 0);
+
+        // Scroll detail page container also to top
+        detailPage.scrollTop = 0;
+    }, 10);
 }
+
+
 
 // ===============================
 // DETAIL PAGE COMPONENT
@@ -335,7 +353,13 @@ function closeDetailPage() {
 
     document.querySelector(".farms-section").style.display = "block";
     document.querySelector(".hero-section").style.display = "flex";
+
+    // ⭐ Restore scroll position after DOM becomes visible
+    setTimeout(() => {
+        window.scrollTo({ top: lastScrollPosition, behavior: "instant" });
+    }, 50);
 }
+
 
 // ===============================
 // BOOKING MODAL
