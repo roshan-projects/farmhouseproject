@@ -1800,3 +1800,28 @@ html {
     text-shadow: 0 3px 8px rgba(0,0,0,0.4);
     animation: fadeInUp 0.8s ease-out forwards;
 }
+
+.farm-insta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #ff512f, #dd2476); /* SAME AS FIRST IMAGE */
+    padding: 12px 22px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.farm-insta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 20px rgba(255, 0, 100, 0.3);
+}
+
+.farm-insta-icon {
+    height: 25px;
+    width: 25px;
+}
+

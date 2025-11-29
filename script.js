@@ -261,12 +261,14 @@ function renderDetailPage(farm) {
                     </div>
 
                     <div class="social-card">
-                        <h3 class="social-card-title">Follow Us</h3>
-                        <a href="${farm.instagram}" target="_blank" class="instagram-link">
-                           <i class="fa-brands fa-instagram fa-2x"></i>
-                              </a>
+    <h3 class="social-card-title">Follow Us</h3>
 
-                    </div>
+    <a href="${farm.instagram}" target="_blank" class="farm-insta-btn">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" class="farm-insta-icon">
+        @${farm.name.replace(/\s+/g, '_').toLowerCase()}
+    </a>
+</div>
+
                 </div>
             </div>
         </div>
