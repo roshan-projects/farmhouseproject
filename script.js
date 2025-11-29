@@ -244,7 +244,10 @@ function renderDetailPage(farm) {
 
                     <div class="social-card">
                         <h3 class="social-card-title">Follow Us</h3>
-                        <a href="${farm.instagram}" target="_blank" class="instagram-link">Instagram</a>
+                        <a href="${farm.instagram}" target="_blank" class="instagram-link">
+                           <i class="fa-brands fa-instagram fa-2x"></i>
+                              </a>
+
                     </div>
                 </div>
             </div>
