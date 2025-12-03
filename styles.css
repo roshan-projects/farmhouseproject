@@ -1826,3 +1826,137 @@ html {
     border-radius: 8px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------
+   MOBILE VIEW OPTIMIZED (ONLY for screens ≤ 768px)
+-------------------------------------------------*/
+@media (max-width: 768px) {
+
+    /* NAVBAR FIX — reduce top spacing */
+    .navbar {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+
+    .nav-container {
+        padding-top: 0 !important;
+    }
+
+    /* Logo + text alignment left */
+    .nav-logo {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 6px;
+        padding-left: 10px;
+        margin-top: 0 !important;     /* removes space above logo */
+    }
+
+    /* Smaller logo only on mobile */
+    .nav-logo img {
+        height: 38px !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    /* Smaller brand text */
+    .nav-logo .logo-text {
+        font-size: 14px !important;
+        font-weight: 600;
+        white-space: nowrap;
+        margin: 0 !important;
+    }
+
+    /* HERO TITLE — perfect fit for mobile */
+    .hero-title {
+        font-size: 24px !important;    /* fits perfectly */
+        line-height: 30px !important;
+        margin-top: 5px !important;
+        padding: 0 10px !important;
+        word-break: break-word;
+        text-align: center;            /* keeps balance */
+    }
+
+    /* HERO SUBTITLE */
+    .hero-subtitle {
+        font-size: 16px !important;
+        line-height: 22px !important;
+        padding: 0 12px !important;
+        text-align: center;
+        margin-top: 5px !important;
+    }
+
+    /* BUTTON FIX */
+    .hero-btn {
+        padding: 10px 20px !important;
+        font-size: 14px !important;
+        border-radius: 30px;
+        margin-top: 10px !important;
+    }
+
+    /* HERO SECTION SPACING */
+    .hero-section {
+        padding-top: 50px !important;      /* perfect spacing */
+        padding-bottom: 40px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Darker overlay for mobile readability */
+    .hero-section::before {
+        background: rgba(0, 0, 0, 0.38) !important;
+    }
+
+    /* WhatsApp button smaller */
+    .whatsapp-btn {
+        transform: scale(0.85);
+        bottom: 15px !important;
+    }
+}
+
+
+
+/* MOBILE VIEW: Logo ON TOP, Text BELOW */
+@media (max-width: 768px) {
+
+    .nav-logo {
+        display: flex !important;
+        flex-direction: column !important;   /* logo on top, text below */
+        align-items: flex-start !important;  /* left align */
+        justify-content: flex-start !important;
+        gap: 2px;  
+        margin-top: 0 !important;
+        padding-left: 10px !important;
+    }
+
+    /* Smaller logo ONLY on mobile */
+    .nav-logo img {
+        height: 45px !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    /* Text directly below logo */
+    .nav-logo .logo-text {
+        font-size: 14px !important;
+        line-height: 1.1 !important;
+        margin-top: 2px !important;
+        text-align: left !important;
+        white-space: nowrap;
+    }
+}
+
+
