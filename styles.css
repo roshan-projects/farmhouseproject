@@ -1942,21 +1942,21 @@ html {
         padding-left: 10px !important;
     }
 
-    /* Smaller logo ONLY on mobile */
-    .nav-logo img {
-        height: 45px !important;
-        width: auto !important;
-        margin: 0 !important;
-    }
+    /* Slightly bigger logo */
+.nav-logo img {
+    height: 88px !important;   /* earlier 38px — now increased   */
+    width: auto !important;
+    margin: 0 !important;
+}
 
-    /* Text directly below logo */
-    .nav-logo .logo-text {
-        font-size: 14px !important;
-        line-height: 1.1 !important;
-        margin-top: 2px !important;
-        text-align: left !important;
-        white-space: nowrap;
-    }
+/* Slightly bigger text */
+.nav-logo .logo-text {
+    font-size: 21px !important;  /* earlier 14px — now increased */
+    font-weight: 600;
+    white-space: nowrap;
+    margin: 0 !important;
+}
+
 }
 
 
