@@ -1960,3 +1960,158 @@ html {
 }
 
 
+
+.other-services {
+  padding: 60px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.other-services h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.service-wrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: white;
+  width: 320px;
+  height: 470px;              /* ✅ FIXED HEIGHT = buttons never escape */
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;   /* ✅ pushes buttons to bottom INSIDE */
+  overflow: hidden;                  /* ✅ hard-stop overflow */
+}
+
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+.service-card img {
+  width: 150px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+
+
+.service-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #111;
+  text-align: center;
+}
+
+.service-card p {
+  font-size: 15px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 0;
+}
+.service-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  margin-top: 18px;
+}
+
+
+
+.service-links a {
+  width: 110px;
+  padding: 10px 6px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  background: #111;
+  color: white;
+  border-radius: 10px;
+  font-size: 12.5px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.service-links a img {
+  width: 18px;
+  height: 18px;
+}
+
+.service-links a:hover {
+  background: #444;
+}
+.service-links a span {
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+.icon-btn {
+   display: flex;              /* ✅ Left-right layout */
+  align-items: center;       /* ✅ Vertical center */
+  justify-content: center;
+  gap: 10px;                  /* ✅ Space between icon & text */
+  margin: 6px;
+  padding: 12px 18px;
+  background: #111;
+  color: white;
+  border-radius: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  min-width: 160px;          /* ✅ Same width for both buttons */
+}
+
+.icon-btn img {
+  width: 18px;               /* ✅ Instagram logo size */
+  height: 18px;
+}
+
+.icon-btn span {
+  font-weight: 500;
+}
+
+
+.icon-btn i {
+  font-size: 15px;
+}
+
+.icon-btn:hover {
+  background: #333;
+}
+
+/* ✅ Instagram brand effect (optional but looks premium) */
+.icon-btn.insta {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+
+.icon-btn.insta:hover {
+  opacity: 0.85;
+}
+.icon-btn.insta-img img {
+  width: 18px;
+  height: 18px;
+}
+
